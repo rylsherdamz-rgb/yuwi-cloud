@@ -1,12 +1,12 @@
 import { useTheme } from "@/hooks/useTheme"
-import { Moon } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 
 
 export default function NavigationBar() {
 
   const theme = useTheme();
 
-  const { setThemeMode, mode } = theme
+  const { setThemeMode, mode, isDark } = theme
 
 
 
@@ -22,6 +22,7 @@ export default function NavigationBar() {
     </div>
 
     <div className="flex justify-center items-center">
+      {/* toggleTheme */}
       <div
         onClick={() => {
           setThemeMode(mode === "dark" ? "light" : "dark")
@@ -30,14 +31,35 @@ export default function NavigationBar() {
           backgroundColor: theme.card
         }}
         className="rounded-full p-2  flex justify-center items-center w-10  shadow-md h-10">
-        <Moon size={18}
-          color={theme.accent}
-          className="rounded-full w-full h-full p-1 "
-          style={{
-            backgroundColor: theme.accentMuted
-          }}
+        {
+          !isDark ? (
+            <Moon size={18}
+              color={theme.accent}
+              className="rounded-full w-full h-full p-1 "
+              style={{
+                backgroundColor: theme.accentMuted
+              }}
 
-        />
+            />) : (
+            <Sun size={18}
+              color={theme.accent}
+              className="rounded-full w-full h-full p-1 "
+              style={{
+                backgroundColor: theme.accentMuted
+              }}
+
+            />
+
+          )
+        }
+
+      </div>
+
+      {/* download button */}
+      <div className=""
+
+      >
+
       </div>
     </div>
 
