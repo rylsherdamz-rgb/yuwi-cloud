@@ -1,5 +1,5 @@
 import { useTheme } from "@/hooks/useTheme"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Download } from "lucide-react"
 
 
 export default function NavigationBar() {
@@ -21,7 +21,7 @@ export default function NavigationBar() {
 
     </div>
 
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center gap-x-5 items-center">
       {/* toggleTheme */}
       <div
         onClick={() => {
@@ -56,14 +56,29 @@ export default function NavigationBar() {
       </div>
 
       {/* download button */}
-      <div className=""
-
-      >
-
+      <div
+        style={{
+          backgroundColor: theme.card,
+          border: isDark ? `1px solid ${theme.accent}` : "none",
+        }}
+        className="w-35  py-1 rounded-lg flex-row gap-x-3 px-2 shadow-sm items-center justify-center  flex h-10">
+        <p
+          style={{
+            color: theme.textPrimary
+          }}
+          className="text-sm">
+          Get the app
+        </p>
+        <Download size={18}
+          color={theme.accent}
+          style={{
+            backgroundColor: theme.card
+          }}
+        />
       </div>
     </div>
 
 
 
-  </div>
+  </div >
 }
