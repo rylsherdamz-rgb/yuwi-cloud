@@ -17,8 +17,12 @@ export default function NavigationBar() {
     }}
     className="rounded-2xl  w-full h-20 shadow-md flex px-5  justify-between ">
 
-    <div className="">
+    <div className="flex justify-center gap-x-2 items-center font-black">
+      <div style={{
+        backgroundColor: theme.accentMuted
+      }} className="w-18 h-18 rounded-2xl ">
 
+      </div>
     </div>
 
     <div className="flex justify-center gap-x-5 items-center">
@@ -56,12 +60,12 @@ export default function NavigationBar() {
       </div>
 
       {/* download button */}
-      <div
+      <button
         style={{
           backgroundColor: theme.card,
           border: isDark ? `1px solid ${theme.accent}` : "none",
         }}
-        className="w-35  py-1 rounded-lg flex-row gap-x-3 px-2 shadow-sm items-center justify-center  flex h-10">
+        className="w-35 duration-500 transition-transform outline-none ease-in-out hover:-translate-y-1   py-1 rounded-lg flex-row gap-x-3 px-2 shadow-md pointer items-center justify-center  flex h-10">
         <p
           style={{
             color: theme.textPrimary
@@ -75,7 +79,7 @@ export default function NavigationBar() {
             backgroundColor: theme.card
           }}
         />
-      </div>
+      </button>
     </div>
 
 
